@@ -1,0 +1,104 @@
+html {
+  background-color: #ddbeaa;
+  height: 100vh;
+}
+body {
+  height: 100vh;
+  margin: 0;
+}
+.main-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.link1 {
+  color: red;
+}
+
+.link2 {
+  color: blue;
+}
+
+.link3 {
+  color: green;
+}
+
+.article-container {
+  margin: 30px;
+}
+
+.article-container h1 {
+  color: darkblue;
+}
+
+.author {
+  color: red;
+  font-weight: bold;
+}
+.article-container article p {
+  line-height: 1.6;
+}
+
+.article-image {
+  width: 300px;
+  height: auto;
+}
+
+.table-container {
+  margin: 30px;
+}
+
+.products-table {
+  border-collapse: collapse;
+  width: 600px;
+}
+
+.products-table th,
+.products-table td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+}
+
+.squares-container {
+  margin: 30px;
+}
+
+.squares-container h1 {
+  color: darkblue;
+}
+
+.squares-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+}
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.green {
+  background-color: green;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.square-image {
+  object-fit: cover;
+}
