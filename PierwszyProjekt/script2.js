@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       if (isValid) {
-        statusBox.className = "status-box success";
+        statusBox.className = "status-box status-box-success";
         statusBox.textContent =
           "Dziękujemy! Zapytanie zostało pomyślnie wysłane.";
         statusBox.style.display = "block";

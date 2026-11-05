@@ -321,7 +321,7 @@ footer {
   text-align: center;
   padding: 1.5rem;
   margin-top: auto;
-  font: size 0.9rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
 }
 
