@@ -310,7 +310,7 @@ textarea.form-control {
 }
 
 .status-box-success {
-  background-color: rgba(34, 197, 94, 0.15);
+  background-color: rgba(34, 197, 94, 0.4);
   color: var(--success);
   border: 1px solid var(--success);
 }
