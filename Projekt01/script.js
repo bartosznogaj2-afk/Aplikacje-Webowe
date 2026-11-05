@@ -31,68 +31,61 @@ function updateThemeButtonText(theme) {
   }
 }
 
-document.addEventListener("DOMContentLoaded", initTheme);
+document.addEventListener("DOMContentLoaded", () => {
+  initTheme(); // Inicjalizacja motywu przy starcie
 
-function switchPage(pageName) {
-  const pages = document.querySelectorAll(".page-content");
-  pages.forEach((page) => {
-    page.style.display = "none";
-  });
-
-  const targetPage = document.getElementById(`page-${pageName}`);
-  if (targetPage) {
-    targetPage.style.display = "block";
+  const themeBtn = document.getElementById("themeBtn");
+  if (themeBtn) {
+    themeBtn.addEventListener("click", toggleTheme);
   }
+});
 
-  const navLinks = document.querySelectorAll("nav a");
-  navLinks.forEach((link) => link.classList.remove("active"));
+document.addEventListener("DOMContentLoaded", () => {
+  const contactForm = document.getElementById("contactForm");
 
-  const activeLink = document.getElementById(`nav-${pageName}`);
-  if (activeLink) {
-    activeLink.classList.add("active");
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const emailInput = document.getElementById("email");
+      const messageInput = document.getElementById("message");
+      const emailError = document.getElementById("emailError");
+      const messageError = document.getElementById("messageError");
+      const statusBox = document.getElementById("statusBox");
+
+      let isValid = true;
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(emailInput.value.trim())) {
+        emailError.style.display = "block";
+        emailInput.style.borderColor = "var(--error)";
+        isValid = false;
+      } else {
+        emailError.style.display = "none";
+        emailInput.style.borderColor = "var(--border-color)";
+      }
+
+      if (messageInput.value.trim().length < 10) {
+        messageError.style.display = "block";
+        messageError.textContent = "Wiadomość musi zawierać minimum 10 znaków";
+        messageInput.style.borderColor = "var(--error)";
+        isValid = false;
+      } else {
+        messageError.style.display = "none";
+        messageInput.style.borderColor = "var(--border-color)";
+      }
+
+      if (isValid) {
+        statusBox.className = "status-box success";
+        statusBox.textContent =
+          "Dziękujemy! Zapytanie zostało pomyślnie wysłane.";
+        statusBox.style.display = "block";
+        contactForm.reset();
+
+        setTimeout(() => {
+          statusBox.style.display = "none";
+        }, 5000);
+      }
+    });
   }
-
-  window.scrollTo(0, 0);
-}
-
-function handleFormSubmit(event) {
-  event.preventDefault();
-
-  const emailInput = document.getElementById("email");
-  const messageInput = document.getElementById("message");
-  const emailError = document.getElementById("emailError");
-  const messageError = document.getElementById("messageError");
-  const statusBox = document.getElementById("statusBox");
-
-  let isValid = true;
-
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(emailInput.value.trim())) {
-    emailError.style.display = "block";
-    emailInput.style.borderColor = "var(--error)";
-    isValid = false;
-  } else {
-    emailError.style.display = "none";
-    emailInput.style.borderColor = "var(--border-color)";
-  }
-
-  if (messageInput.value.trim().length < 10) {
-    messageError.style.display = "block";
-    messageInput.style.borderColor = "var(--error)";
-    isValid = false;
-  } else {
-    messageError.style.display = "none";
-    messageInput.style.borderColor = "var(--border-color)";
-  }
-
-  if (isValid) {
-    statusBox.className = "status-box success";
-    statusBox.textContent = "Dziękujemy! Zapytanie zostało pomyślnie wysłane.";
-    statusBox.style.display = "block";
-    document.getElementById("contactForm").reset();
-
-    setTimeout(() => {
-      statusBox.style.display = "none";
-    }, 5000);
-  }
-}
+});
