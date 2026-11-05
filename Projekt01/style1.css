@@ -214,6 +214,10 @@ nav a.active {
   font-weight: 700;
 }
 
+.hidden {
+  display: none;
+}
+
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));

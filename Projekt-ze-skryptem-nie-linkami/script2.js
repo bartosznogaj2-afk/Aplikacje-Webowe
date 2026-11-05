@@ -89,3 +89,39 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+function switchPage(pageName) {
+  const pages = document.querySelectorAll(".page-content");
+  pages.forEach((page) => {
+    page.classList.add("hidden");
+  });
+  const targetPage = document.getElementById(`page-${pageName}`);
+  if (targetPage) {
+    targetPage.classList.remove("hidden");
+  }
+
+  const navLinks = document.querySelectorAll("nav a");
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+  });
+
+  const activeLink = document.getElementById(`nav-${pageName}`);
+  if (activeLink) {
+    activeLink.classList.add("active");
+  }
+
+  window.scrollTo(0, 0);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const navTriggers = document.querySelectorAll(".nav-link");
+  navTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", (event) => {
+      event.preventDefault();
+      const pageName = trigger.getAttribute("data-target");
+      if (pageName) {
+        switchPage(pageName);
+      }
+    });
+  });
+});
