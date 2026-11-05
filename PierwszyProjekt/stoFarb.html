@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StoFarb Włoszczowa - Strona Główna</title>
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <a href="#home" id="nav-logo" class="logo nav-link" data-target="home"
+          >StoFarb Włoszczowa</a
+        >
+        <nav>
+          <ul>
+            <li>
+              <a
+                href="#home"
+                id="nav-home"
+                class="nav-link active"
+                data-target="home"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#gallery"
+                id="nav-gallery"
+                class="nav-link"
+                data-target="gallery"
+                >Galeria</a
+              >
+            </li>
+            <li>
+              <a
+                href="#contact"
+                id="nav-home"
+                class="nav-link"
+                data-target="contact"
+                >Kontakt</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div class="header-right">
+          <div id="live-clock">00:00:00</div>
+          <button class="theme-toggle" id="themeBtn">Ciemny</button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section id="page-home" class="page-content">
+        <div class="hero">
+          <h1>StoFarb Włoszczowa</h1>
+          <p>Market budowlany. Farby, lakiery, tynki.</p>
+          <a href="#gallery" class="btn nav-link" data-target="gallery"
+            >Galeria zdjęć sklepu</a
+          >
+        </div>
+        <div class="features-grid">
+          <article class="card">
+            <h3>Mieszalnik farb</h3>
+            <p>
+              Dobór koloru na zamówienie. Dostępne różne bazy i pigmenty.
+              Dorabiamy kolory z palety RAL i NCS.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Farby na zamówienie</h3>
+            <p>
+              Zapewniamy możliwośc zamówienia farby z odbiorem w naszych innych
+              sklepach. Oferujemy również możliwosc zamówienia prosto od
+              producenta farb których nie posiadamy na magazynie.
+            </p>
+          </article>
+          <article class="card">
+            <h3></h3>
+            <p></p>
+          </article>
+        </div>
+      </section>
+
+      <!--strona ze zdjeciami-->
+      <section id="page-gallery" class="page-content hidden">
+        <div class="gallery-header-box">
+          <h2>Galeria</h2>
+          <p class="subtitle-text">Zdjecia sklepu</p>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="obrazy/zdjecie1.jpg" alt="zdjecie1" />
+          </div>
+          <div class="gallery-item">
+            <img src="obrazy/zdjecie2.jpg" alt="zdjecie2" />
+          </div>
+          <div class="gallery-item">
+            <img src="obrazy/zdjecie3.jpg" alt="zdjecie3" />
+          </div>
+          <div class="gallery-item">
+            <img src="obrazy/zdjecie4.jpg" alt="zdjecie4" />
+          </div>
+          <div class="gallery-item">
+            <img src="obrazy/zdjecie5.jpg" alt="zdjecie5" />
+          </div>
+        </div>
+
+        <section class="video-section">
+          <h3>Materiał wideo</h3>
+          <p class="subtitle-text">Nagranie przedstawiające nasz sklep</p>
+          <div class="video-container">
+            <video controls poster="wideo/okladka.jpg">
+              <source src="wideo/spin.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </section>
+      </section>
+
+      <!--formularz kontaktu-->
+      <section id="page-contact" class="page-content hidden">
+        <div class="contact-container">
+          <h2>Formularz kontaktowy</h2>
+          <p class="subtitle-text">Masz pytanie napisz do nas</p>
+          <div id="statusBox" class="status-box"></div>
+
+          <form id="contactForm" novalidate>
+            <div class="form-group">
+              <label for="email">E-Mail *</label>
+              <input
+                type="text"
+                id="email"
+                class="form-control"
+                placeholder="bartosznogaj2@gmail.com"
+              />
+              <div id="emailError" class="error-message">
+                Wprowadź poprawny adres e-mail
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">Temat wiadomości *</label>
+              <select id="subject" class="form-control">
+                <option value="pytanie">Pytanie odnośnie asortymentu</option>
+                <option value="zamowienie">Farby na zamówienie</option>
+                <option value="program">Program lojalnościowy</option>
+                <option value="inne">Inny temat</option>
+              </select>
+            </div>
+            <div class="form-group">
+            <label for="message">Wiadomość *</label>
+            <textarea
+              id="message"
+              class="form-control"
+              placeholder="Wpisz treść wiadomości (minimum 10 znaków)..."
+            ></textarea>
+            <div id="messageError" class="error-message">
+              Wiadomośc musi zawierać minimum 10 znaków
+            </div>
+          </div>
+          <input type="submit" value="Wyślij" class="btn"/>
+        </form>
+        </form>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2026 StoFarb Włoszczowa. Autor: <span>Bartosz Nogaj</span></p>
+    </footer>
+    <script src="script2.js"></script>
+  </body>
+</html>
