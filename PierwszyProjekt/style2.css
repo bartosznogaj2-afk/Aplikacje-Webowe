@@ -1,11 +1,3 @@
-/*.jetbrains-mono-<uniquifier > {
-  font-family: "JetBrains Mono", monospace;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-}
-*/
-
 :root {
   --bg-color: #0b1329;
   --card-bg: #141e3d;
@@ -237,11 +229,6 @@ nav a.active {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.gallery-item:hover img {
-  transform: scale(1.08);
 }
 
 .video-section {
